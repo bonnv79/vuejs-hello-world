@@ -2,66 +2,54 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
 
   <div class="radio-list">
-    <div v-for="(item, index) in list" :key="item.id" class="radio-item">
+    <div v-for="item in list" :key="item.id" class="radio-item">
       <input
         type="radio"
         v-bind:id="item.id"
-        v-bind:value="index"
-        v-model="selected"
+        v-bind:value="item.id"
+        v-model="view"
       />
       <label v-bind:for="item.id">{{ item.name }}</label>
     </div>
   </div>
 
-  <div v-if="getSelectedId === 'Introduction'">
-    <h1>Introduction</h1>
-    <Introduction />
-  </div>
-
-  <div v-if="getSelectedId === 'ComputedProperties'">
-    <h1>ComputedProperties</h1>
-    <ComputedProperties />
-  </div>
-
-  <div v-if="getSelectedId === 'Demo'">
-    <h1>Demo</h1>
-    <Demo />
-  </div>
-
-  <div v-if="getSelectedId === 'WatchProperty'">
-    <h1>WatchProperty</h1>
-    <WatchProperty />
-  </div>
-
-  <div v-if="getSelectedId === 'Binding'">
-    <h1>Binding</h1>
-    <Binding />
-  </div>
+  <component v-bind:is="view"></component>
 </template>
 
 <script>
 import Demo from "./components/Demo/Demo.vue";
 import Introduction from "./components/Introduction";
+import Instances from "./components/Instances";
+import Template from "./components/Template";
+import Components from "./components/Components";
 import ComputedProperties from "./components/ComputedProperties";
 import WatchProperty from "./components/WatchProperty";
 import Binding from "./components/Binding";
+import Events from "./components/Events";
+import Rendering from "./components/Rendering";
+import TransitionAnimation from "./components/TransitionAnimation";
+import Directives from "./components/Directives";
 
 export default {
   name: "App",
   components: {
     Demo,
     Introduction,
+    Instances,
+    Template,
+    Components,
     ComputedProperties,
     WatchProperty,
     Binding,
+    Events,
+    Rendering,
+    TransitionAnimation,
+    Directives,
   },
   setup() {},
   data: () => {
     return {
-      hidden: {
-        demo: true,
-      },
-      selected: 0,
+      view: "Introduction",
       list: [
         // {
         //   id: "Demo",
@@ -70,6 +58,18 @@ export default {
         {
           id: "Introduction",
           name: "Introduction",
+        },
+        {
+          id: "Instances",
+          name: "Instances",
+        },
+        {
+          id: "Template",
+          name: "Template",
+        },
+        {
+          id: "Components",
+          name: "Components",
         },
         {
           id: "ComputedProperties",
@@ -83,17 +83,27 @@ export default {
           id: "Binding",
           name: "Binding",
         },
+        {
+          id: "Events",
+          name: "Events",
+        },
+        {
+          id: "Rendering",
+          name: "Rendering",
+        },
+        {
+          id: "TransitionAnimation",
+          name: "TransitionAnimation",
+        },
+        {
+          id: "Directives",
+          name: "Directives",
+        },
       ],
     };
   },
-  methods: {
-    onClick: function () {},
-  },
-  computed: {
-    getSelectedId() {
-      return this.list[this.selected] && this.list[this.selected].id;
-    },
-  },
+  methods: {},
+  computed: {},
 };
 </script>
 
@@ -109,6 +119,8 @@ export default {
 
 .radio-list {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .radio-item {

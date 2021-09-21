@@ -3,6 +3,9 @@
 ## Demo
 Demo and playground are available [here](https://bonnv79.github.io/vuejs-hello-world/)
 
+## References
+The project is built on the platform of [tutorialspoint.com/vuejs](https://www.tutorialspoint.com/vuejs)
+
 ## Project setup
 ```
 npm install
