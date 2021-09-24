@@ -40,8 +40,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h5 {
-  margin: 0;
-}
 </style>

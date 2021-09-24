@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.0.5
+
+- Add router for app
+
 ##### 1.0.4
 
 - Add new LifecycleHooks, modify Example2 of RenderFunction 

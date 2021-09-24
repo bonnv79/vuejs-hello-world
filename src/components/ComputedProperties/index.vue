@@ -34,13 +34,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2,
-h3 {
-  margin: 20px 0 10px 0;
-}
-
-h3 {
-  background-color: rgb(197, 197, 197);
-}
 </style>
