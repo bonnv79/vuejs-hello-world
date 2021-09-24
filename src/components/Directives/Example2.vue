@@ -15,7 +15,9 @@ export default {
   setup() {
     return {};
   },
-  data: () => {},
+  data: () => {
+    return {};
+  },
   methods: {},
   computed: {},
 };

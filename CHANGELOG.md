@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.0.3
+
+- Add new Examples, Mixins, ReactiveInterface, RenderFunction
+
 ##### 1.0.2
 
 - Add new Components, Directives, Events, Instances, Rendering, Template, TransitionAnimation

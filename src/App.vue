@@ -1,5 +1,21 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
+  <h1 class="home-title">VueJS Hello World</h1>
+  <div class="home-header">
+    <a
+      class="home-link"
+      target="_blank"
+      href="https://v3.vuejs.org/api/application-api.html"
+      >application-api</a
+    >
+    <a
+      class="home-link"
+      target="_blank"
+      href="https://www.tutorialspoint.com/vuejs/index.htm"
+      >document</a
+    >
+    <a class="home-link" target="_blank" v-bind:href="getUrl()">source</a>
+  </div>
 
   <div class="radio-list">
     <div v-for="item in list" :key="item.id" class="radio-item">
@@ -14,6 +30,15 @@
   </div>
 
   <component v-bind:is="view"></component>
+
+  <div class="home-footer">
+    <a
+      class="home-link home-link-version"
+      target="_blank"
+      v-bind:href="getUrl('blob/master/README.md')"
+      >{{ getVersion }}</a
+    >
+  </div>
 </template>
 
 <script>
@@ -29,6 +54,11 @@ import Events from "./components/Events";
 import Rendering from "./components/Rendering";
 import TransitionAnimation from "./components/TransitionAnimation";
 import Directives from "./components/Directives";
+import Mixins from "./components/Mixins";
+import RenderFunction from "./components/RenderFunction";
+import ReactiveInterface from "./components/ReactiveInterface";
+import Examples from "./components/Examples";
+import pakageJson from "../package.json";
 
 export default {
   name: "App",
@@ -45,6 +75,10 @@ export default {
     Rendering,
     TransitionAnimation,
     Directives,
+    Mixins,
+    RenderFunction,
+    ReactiveInterface,
+    Examples,
   },
   setup() {},
   data: () => {
@@ -99,11 +133,37 @@ export default {
           id: "Directives",
           name: "Directives",
         },
+        {
+          id: "Mixins",
+          name: "Mixins",
+        },
+        {
+          id: "RenderFunction",
+          name: "RenderFunction",
+        },
+        {
+          id: "ReactiveInterface",
+          name: "ReactiveInterface",
+        },
+        {
+          id: "Examples",
+          name: "Examples",
+        },
       ],
     };
   },
-  methods: {},
-  computed: {},
+  methods: {
+    getUrl: (path = "") => {
+      return `https://github.com/bonnv79/vuejs-hello-world/${path}`;
+    },
+  },
+  computed: {
+    getVersion: function () {
+      const version =
+        pakageJson && pakageJson.version ? pakageJson.version : "1.0.0";
+      return `v${version}`;
+    },
+  },
 };
 </script>
 
@@ -114,7 +174,34 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 20px;
-  /* text-align: center; */
+}
+
+.home-title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.home-header {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.home-link {
+  margin: 5px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.home-footer {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+}
+
+.home-link-version {
 }
 
 .radio-list {
