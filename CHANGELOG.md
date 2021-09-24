@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.0
+
+- Integrating 3rd-Party Routers (vue-router)
+
 ##### 1.0.6
 
 - Fix css for menu
