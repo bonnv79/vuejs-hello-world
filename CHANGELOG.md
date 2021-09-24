@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.2
+
+- Deploy Your Vue App to Github Pages
+
 ##### 1.1.0
 
 - Integrating 3rd-Party Routers (vue-router)
