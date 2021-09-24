@@ -37,7 +37,7 @@
       >
       <a class="home-link" target="_blank" v-bind:href="getUrl()">source</a>
     </div>
-    <div class="body-title">{{ `${currentRoute}`.replace("/", "") }}</div>
+    <div class="body-title">{{ ViewTitle }}</div>
 
     <component v-bind:is="ViewComponent"></component>
   </div>
@@ -192,7 +192,8 @@ export default {
   setup() {},
   data: () => {
     let path = window.location.pathname;
-    path = path === "/" ? "/Introduction" : path;
+    path = path === "/" ? routers[0].path : path;
+    window.history.pushState("Page", "Title", path);
 
     return {
       currentRoute: path,
@@ -216,6 +217,11 @@ export default {
     },
     ViewComponent() {
       return routerPathToCompnent[this.currentRoute] || NotFound;
+    },
+    ViewTitle() {
+      return routerPathToCompnent[this.currentRoute]
+        ? `${this.currentRoute}`.replace("/", "")
+        : "";
     },
   },
 };
@@ -262,6 +268,8 @@ body {
 
 .header-right {
   flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .body {

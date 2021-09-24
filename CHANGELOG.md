@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.0.6
+
+- Fix css for menu
+
 ##### 1.0.5
 
 - Add router for app
