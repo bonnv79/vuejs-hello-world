@@ -1,9 +1,6 @@
 <template>
   <div class="">
-    <h3>
-      1. Component does provide something called as slots. Let’s make use of it
-      and see if we get the desired results.
-    </h3>
+    <h3>1. Component does provide something called as slots.</h3>
 
     <TestComponent>Hello Jai</TestComponent>
     <TestComponent>Hello Roy</TestComponent>

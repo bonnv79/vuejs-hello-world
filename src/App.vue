@@ -58,6 +58,7 @@ import Mixins from "./components/Mixins";
 import RenderFunction from "./components/RenderFunction";
 import ReactiveInterface from "./components/ReactiveInterface";
 import Examples from "./components/Examples";
+import LifecycleHooks from "./components/LifecycleHooks";
 import pakageJson from "../package.json";
 
 export default {
@@ -79,6 +80,7 @@ export default {
     RenderFunction,
     ReactiveInterface,
     Examples,
+    LifecycleHooks,
   },
   setup() {},
   data: () => {
@@ -149,6 +151,10 @@ export default {
           id: "Examples",
           name: "Examples",
         },
+        {
+          id: "LifecycleHooks",
+          name: "LifecycleHooks",
+        },
       ],
     };
   },
@@ -196,7 +202,7 @@ export default {
 }
 
 .home-footer {
-  position: absolute;
+  position: fixed;
   left: 20px;
   bottom: 10px;
 }

@@ -6,12 +6,12 @@
       component.
     </h3>
 
-    <TestComponent :elementtype="'div,red,25,div1'">Hello Jai</TestComponent>
-    <TestComponent :elementtype="'h3,green,25,h3tag'">Hello Roy</TestComponent>
-    <TestComponent :elementtype="'p,blue,25,ptag'">Hello Ria</TestComponent>
-    <TestComponent :elementtype="'div,green,25,divtag'"
-      >Hello Ben</TestComponent
-    >
+    <TestComponent v-bind:elementtype="elementtype">
+      <span>Hello Jai</span>
+    </TestComponent>
+    <TestComponent elementtype="h3,green,25,h3tag">Hello Roy</TestComponent>
+    <TestComponent elementtype="p,blue,25,ptag">Hello Ria</TestComponent>
+    <TestComponent elementtype="div,green,25,divtag">Hello Ben</TestComponent>
   </div>
 </template>
 
@@ -20,18 +20,14 @@ import TestComponent from "./testcomponent2.vue";
 
 export default {
   name: "Example",
-  props: {},
   components: {
     TestComponent,
   },
-  setup() {
-    return {};
-  },
   data: () => {
-    return {};
+    return {
+      elementtype: "div,red,25,div1",
+    };
   },
-  methods: {},
-  computed: {},
 };
 </script>
 

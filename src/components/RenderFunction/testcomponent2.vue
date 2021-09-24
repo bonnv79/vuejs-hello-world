@@ -1,8 +1,7 @@
-<template>
-  <h1><slot></slot></h1>
-</template>
 
 <script>
+import { h } from "vue";
+
 export default {
   name: "Example",
   props: {
@@ -11,17 +10,15 @@ export default {
       required: true,
     },
   },
-  render: function (createElement) {
+  render() {
     var a = this.elementtype.split(",");
-    return createElement(
+    return h(
       a[0],
       {
-        attrs: {
-          id: a[3],
-          style: "color:" + a[1] + ";font-size:" + a[2] + ";",
-        },
+        id: a[3],
+        style: "color:" + a[1] + ";font-size:" + a[2] + "px;",
       },
-      this.$slots.default
+      h(this.$slots.default)
     );
   },
 };

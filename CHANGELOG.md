@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.0.4
+
+- Add new LifecycleHooks, modify Example2 of RenderFunction 
+
 ##### 1.0.3
 
 - Add new Examples, Mixins, ReactiveInterface, RenderFunction
