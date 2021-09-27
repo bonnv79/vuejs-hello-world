@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.4
+
+- Add Tabs and BlockCode, modify demo page (Introduction, Instances)
+
 ##### 1.1.3
 
 - Nested Routes 

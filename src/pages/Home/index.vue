@@ -79,17 +79,6 @@ export default {
   padding-bottom: 8px;
 }
 
-code {
-  padding: 10px;
-  background-color: #5f6f85;
-  color: #ffffff;
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-  border-radius: 6px;
-  line-height: 1;
-}
-
 .marginTopBottom {
   margin: 8px;
 }

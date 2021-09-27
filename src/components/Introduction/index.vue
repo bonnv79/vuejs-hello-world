@@ -1,21 +1,27 @@
 <template>
-  <div class="">
-    <Example1 />
-  </div>
+  <Tabs :data="tabs" />
 </template>
 
 <script>
 import Example1 from "./Example1.vue";
+import Tabs from "@/components/Tabs";
 
 export default {
   name: "Index",
   components: {
-    Example1,
+    Tabs,
   },
   props: {},
+  data: function () {
+    return {
+      tabs: [
+        {
+          id: "Example1",
+          name: "Example1",
+          component: <Example1 />,
+        },
+      ],
+    };
+  },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-</style>

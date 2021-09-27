@@ -169,4 +169,15 @@ body {
   left: 20px;
   bottom: 10px;
 }
+
+code {
+  padding: 10px;
+  background-color: #5f6f85;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 6px;
+  line-height: 1;
+}
 </style>
