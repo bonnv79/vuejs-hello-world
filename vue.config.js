@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? process.env.PROJECT_NAME
-    : './',
+    : '/',
   configureWebpack: {
     resolve: {
       alias: {

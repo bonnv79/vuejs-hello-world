@@ -1,94 +1,113 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
+import Instances from '@/components/Instances';
 
 export const routes = [
   {
     path: '/',
-    redirect: '/Introduction'
+    redirect: '/home'
   },
   {
-    path: "/Introduction",
-    name: "Introduction",
-    component: () => import('@/components/Introduction'),
+    path: "/home",
+    name: "Home",
+    component: () => import('@/pages/Home'),
   },
   {
-    path: "/Instances",
-    name: "Instances",
-    component: () => import('@/components/Instances'),
+    path: "/about",
+    name: "About",
+    component: () => import('@/pages/About'),
   },
   {
-    path: "/Template",
-    name: "Template",
-    component: () => import('@/components/Template'),
-  },
-  {
-    path: "/Components",
-    name: "Components",
-    component: () => import('@/components/Components'),
-  },
-  {
-    path: "/ComputedProperties",
-    name: "ComputedProperties",
-    component: () => import('@/components/ComputedProperties'),
-  },
-  {
-    path: "/WatchProperty",
-    name: "WatchProperty",
-    component: () => import('@/components/WatchProperty'),
-  },
-  {
-    path: "/Binding",
-    name: "Binding",
-    component: () => import('@/components/Binding'),
-  },
-  {
-    path: "/Events",
-    name: "Events",
-    component: () => import('@/components/Events'),
-  },
-  {
-    path: "/Rendering",
-    name: "Rendering",
-    component: () => import('@/components/Rendering'),
-  },
-  {
-    path: "/TransitionAnimation",
-    name: "TransitionAnimation",
-    component: () => import('@/components/TransitionAnimation'),
-  },
-  {
-    path: "/Directives",
-    name: "Directives",
-    component: () => import('@/components/Directives'),
-  },
-  {
-    path: "/Mixins",
-    name: "Mixins",
-    component: () => import('@/components/Mixins'),
-  },
-  {
-    path: "/RenderFunction",
-    name: "RenderFunction",
-    component: () => import('@/components/RenderFunction'),
-  },
-  {
-    path: "/ReactiveInterface",
-    name: "ReactiveInterface",
-    component: () => import('@/components/ReactiveInterface'),
-  },
-  {
-    path: "/LifecycleHooks",
-    name: "LifecycleHooks",
-    component: () => import('@/components/LifecycleHooks'),
-  },
-  {
-    path: "/Examples",
-    name: "Examples",
-    component: () => import('@/components/Examples'),
-  },
-  {
-    path: "/Demo",
-    name: "Demo",
-    component: () => import('@/components/Demo')
+    path: "/example",
+    name: "Example",
+    component: () => import('@/pages/Example'),
+    to: '/example/introduction',
+    children: [
+      {
+        path: "introduction",
+        name: "Introduction",
+        component: () => import('@/components/Introduction'),
+      },
+      {
+        path: "instances",
+        name: "Instances",
+        component: Instances,
+      },
+      {
+        path: "template",
+        name: "Template",
+        component: () => import('@/components/Template'),
+      },
+      {
+        path: "components",
+        name: "Components",
+        component: () => import('@/components/Components'),
+      },
+      {
+        path: "computed-properties",
+        name: "ComputedProperties",
+        component: () => import('@/components/ComputedProperties'),
+      },
+      {
+        path: "watch-property",
+        name: "WatchProperty",
+        component: () => import('@/components/WatchProperty'),
+      },
+      {
+        path: "binding",
+        name: "Binding",
+        component: () => import('@/components/Binding'),
+      },
+      {
+        path: "events",
+        name: "Events",
+        component: () => import('@/components/Events'),
+      },
+      {
+        path: "rendering",
+        name: "Rendering",
+        component: () => import('@/components/Rendering'),
+      },
+      {
+        path: "transition-animation",
+        name: "TransitionAnimation",
+        component: () => import('@/components/TransitionAnimation'),
+      },
+      {
+        path: "directives",
+        name: "Directives",
+        component: () => import('@/components/Directives'),
+      },
+      {
+        path: "mixins",
+        name: "Mixins",
+        component: () => import('@/components/Mixins'),
+      },
+      {
+        path: "render-function",
+        name: "RenderFunction",
+        component: () => import('@/components/RenderFunction'),
+      },
+      {
+        path: "reactive-interface",
+        name: "ReactiveInterface",
+        component: () => import('@/components/ReactiveInterface'),
+      },
+      {
+        path: "lifecycle-hooks",
+        name: "LifecycleHooks",
+        component: () => import('@/components/LifecycleHooks'),
+      },
+      {
+        path: "examples",
+        name: "Examples",
+        component: () => import('@/components/Examples'),
+      },
+      {
+        path: "demo",
+        name: "Demo",
+        component: () => import('@/components/Demo')
+      }
+    ]
   },
   {
     path: "/:catchAll(.*)",

@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.3
+
+- Nested Routes 
+
 ##### 1.1.2
 
 - Deploy Your Vue App to Github Pages

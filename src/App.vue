@@ -1,21 +1,11 @@
 <template>
   <div class="header">
-    <div class="header-left">
+    <router-link to="/" class="header-left">
       <img alt="Vue logo" src="./assets/logo.png" class="logo" />
       <span class="header-title">{{ title }}</span>
-    </div>
+    </router-link>
     <div class="header-right">
-      <div class="nav">
-        <router-link
-          v-for="item in list"
-          v-show="item.name"
-          :key="item.path"
-          :class="['nav-item']"
-          :to="item.path"
-        >
-          {{ item.name }}
-        </router-link>
-      </div>
+      <NavBar v-bind:data="menuData" />
     </div>
   </div>
 
@@ -31,7 +21,7 @@
         {{ item.name }}
       </a>
     </div>
-    <div class="body-title">{{ ViewTitle }}</div>
+    <div class="breadcrumb"><Breadcrumb :data="breadcrumbData" /></div>
 
     <router-view />
   </div>
@@ -49,14 +39,20 @@
 <script>
 import pakageJson from "../package.json";
 import { routes } from "@/router/index.js";
+import NavBar from "./components/NavBar";
+import Breadcrumb from "./components/Breadcrumb";
 
 export default {
   name: "App",
-  components: {},
+  components: {
+    NavBar,
+    Breadcrumb,
+  },
   setup() {},
   data: function () {
     return {
       title: "Vue.js",
+      menuData: routes,
       list: routes,
       links: [
         {
@@ -85,9 +81,10 @@ export default {
         pakageJson && pakageJson.version ? pakageJson.version : "1.0.0";
       return `v${version}`;
     },
-    ViewTitle() {
-      const { name } = this.$route || {};
-      return name;
+    breadcrumbData() {
+      const { matched } = this.$route || {};
+
+      return matched;
     },
   },
 };
@@ -107,10 +104,10 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 10px 20px;
+  padding: 0 20px;
   position: sticky;
   top: 0;
-  background-color: #ffffff;
+  background-color: #dddddd;
   z-index: 1000;
   box-shadow: 0 0 1px rgb(0 0 0 / 25%);
 }
@@ -119,15 +116,17 @@ body {
   display: flex;
   align-items: center;
   padding-right: 20px;
+  text-decoration: none;
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
 }
 
 .header-title {
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #273849;
   font-weight: 500;
 }
@@ -143,6 +142,10 @@ body {
   padding: 0 20px 20px 20px;
 }
 
+.body > .breadcrumb {
+  border-bottom: 1px solid #eaecef;
+}
+
 .body-title {
   padding: 10px 0;
   font-size: 1.5rem;
@@ -151,7 +154,7 @@ body {
 
 .source-link {
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 20px;
 }
 
@@ -165,31 +168,5 @@ body {
   position: fixed;
   left: 20px;
   bottom: 10px;
-}
-
-.home-link-version {
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.nav .nav-item {
-  padding: 5px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: bold;
-  color: #8e8e8e;
-  text-decoration: none;
-}
-
-.nav .nav-item:hover {
-  color: #303030;
-}
-
-.nav .nav-item.router-link-exact-active {
-  color: #42b983;
 }
 </style>
