@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.5
+
+- modify demo page (add tabs for examples)
+
 ##### 1.1.4
 
 - Add Tabs and BlockCode, modify demo page (Introduction, Instances)

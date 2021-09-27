@@ -1,24 +1,26 @@
 <template>
-  <div class="">
-    <h3>
-      Using an example, we will see we can use the Watch property in VueJS.
-    </h3>
-    <Example1 />
-  </div>
+  <Tabs :data="tabs" />
 </template>
 
 <script>
 import Example1 from "./Example1.vue";
+import Tabs from "@/components/Tabs";
 
 export default {
-  name: "WatchProperty",
+  name: "Index",
   components: {
-    Example1,
+    Tabs,
   },
-  props: {},
+  data: function () {
+    return {
+      tabs: [
+        {
+          id: "Example1",
+          name: "Example1",
+          component: <Example1 />,
+        },
+      ],
+    };
+  },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>

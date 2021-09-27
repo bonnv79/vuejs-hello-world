@@ -1,5 +1,9 @@
 <template>
   <div class="">
+    <h3>
+      Using an example, we will see we can use the Watch property in VueJS.
+    </h3>
+
     Kilometers : <input type="text" v-model="kilometers" /> Meters :
     <input type="text" v-model="meters" />
   </div>

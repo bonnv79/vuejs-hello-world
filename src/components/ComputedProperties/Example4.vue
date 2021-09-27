@@ -1,5 +1,7 @@
 <template>
   <div class="">
+    <h3>Get/Set in Computed Properties</h3>
+
     <input type="text" v-model="fullname" />
     <h1>{{ firstName }}</h1>
     <h1>{{ lastName }}</h1>

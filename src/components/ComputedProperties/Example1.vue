@@ -1,5 +1,7 @@
 <template>
   <div class="">
+    <h3>Let’s understand computed properties using an example.</h3>
+
     FirstName : <input type="text" v-model="firstname" /> <br />
     LastName : <input type="text" v-model="lastname" /> <br />
     <h1>My name is {{ firstname }} {{ lastname }}</h1>

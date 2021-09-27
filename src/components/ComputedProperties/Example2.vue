@@ -1,5 +1,7 @@
 <template>
   <div class="">
+    <h3>The difference between a method and a computed property.</h3>
+
     <h1 style="background-color: gray">
       Random No from computed property: {{ getrandomno }}
     </h1>

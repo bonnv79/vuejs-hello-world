@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <BlockCode :code="code">
     <div class="">
@@ -42,3 +45,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

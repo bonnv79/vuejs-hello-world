@@ -12,7 +12,6 @@ export default {
   components: {
     Tabs,
   },
-  props: {},
   data: function () {
     return {
       tabs: [
