@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <h2>model</h2>
   FirstName : <input type="text" v-model="firstname" /> <br />
@@ -39,10 +42,10 @@
 
 <script>
 import { onMounted } from "@vue/runtime-core";
-import Text from "./Text.vue";
+import Text from "./Example2.vue";
 
 export default {
-  name: "Demo",
+  name: "Example1",
   components: {
     Text,
   },
@@ -81,7 +84,7 @@ export default {
   methods: {
     mydetails: function () {
       this.aPlus = 5;
-      this.htmlcontent = `<div><h1>Vue Js Template - ${this.lastname}</h1></div>`;
+      this.htmlcontent = \`< div > <h1>Vue Js Template - \${this.lastname}</h1></div> \`;
 
       return "I am " + this.lastname;
     },
@@ -108,5 +111,6 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+`;
+
+export default parseCode(code);

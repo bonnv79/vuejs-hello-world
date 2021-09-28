@@ -1,27 +1,12 @@
-<template>
-  <Tabs :data="tabs" />
-</template>
-
 <script>
-import Example1 from "./Example1.vue";
-import code1 from "./Example1.code";
-import Tabs from "@/components/Tabs";
+import TabsTemplate from "@/components/TabsTemplate";
 
 export default {
   name: "Index",
-  components: {
-    Tabs,
-  },
-  data: function () {
+  extends: TabsTemplate,
+  setup: function () {
     return {
-      tabs: [
-        {
-          id: "Example1",
-          name: "Example1",
-          component: <Example1 />,
-          code: code1,
-        },
-      ],
+      name: "Template",
     };
   },
 };

@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>1. Mixins are basically to be used with components.</h3>
@@ -34,3 +37,7 @@ export default {
   mixins: [myMixin],
 };
 </script>
+
+`;
+
+export default parseCode(code);

@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>1. Component does provide something called as slots.</h3>
@@ -19,3 +22,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

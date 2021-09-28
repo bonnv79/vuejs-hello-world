@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>1. Conditional Rendering</h3>
@@ -54,3 +57,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

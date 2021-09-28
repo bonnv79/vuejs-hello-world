@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>
@@ -53,3 +56,7 @@ export default {
   position: relative;
 }
 </style>
+
+`;
+
+export default parseCode(code);

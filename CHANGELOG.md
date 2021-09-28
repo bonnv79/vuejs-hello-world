@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.7
+
+- completed show code
+
 ##### 1.1.6
 
 - Add TabsTemplate component 

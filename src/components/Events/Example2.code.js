@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>2. Event Modifiers</h3>
@@ -27,7 +30,7 @@
 
 <script>
 export default {
-  name: "Example2",
+  name: "Example",
   props: {
     title: String,
   },
@@ -56,3 +59,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

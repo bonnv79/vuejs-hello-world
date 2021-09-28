@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>1. Currency Converter</h3>
@@ -135,3 +138,7 @@ input {
   font-size: 25px;
 }
 </style>
+
+`;
+
+export default parseCode(code);

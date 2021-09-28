@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>2. Animation</h3>
@@ -45,3 +48,7 @@ export default {
   }
 }
 </style>
+
+`;
+
+export default parseCode(code);

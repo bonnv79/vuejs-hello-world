@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="root">
     <h3>4. Custom Events</h3>
@@ -19,7 +22,7 @@
 import ButtonCounter from "./button-counter.vue";
 
 export default {
-  name: "Example4",
+  name: "Example",
   components: {
     ButtonCounter,
   },
@@ -45,3 +48,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

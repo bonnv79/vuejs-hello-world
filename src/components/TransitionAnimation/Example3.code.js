@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="root">
     <h3>3. Custom Transition Classes</h3>
@@ -27,3 +30,6 @@ export default {
   },
 };
 </script>
+`;
+
+export default parseCode(code);

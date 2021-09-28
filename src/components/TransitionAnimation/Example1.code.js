@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>1. Transition</h3>
@@ -47,3 +50,7 @@ export default {
   transform: translateX(100px);
 }
 </style>
+
+`;
+
+export default parseCode(code);

@@ -15,7 +15,7 @@
 import { ref, reactive, onBeforeUpdate } from "vue";
 
 export default {
-  name: "Text",
+  name: "Example2",
   props: {
     title: String,
     msg: String,
@@ -37,7 +37,3 @@ export default {
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>

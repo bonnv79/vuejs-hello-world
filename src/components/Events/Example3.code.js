@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="root">
     <h3>3.Event - Key Modifiers</h3>
@@ -15,7 +18,7 @@
 
 <script>
 export default {
-  name: "Example3",
+  name: "Example",
   data: () => {
     return {
       name: "",
@@ -34,3 +37,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);
