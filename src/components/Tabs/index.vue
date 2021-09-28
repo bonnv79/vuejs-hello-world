@@ -8,6 +8,7 @@
     >
       {{ item.name }}
     </button>
+    <span />
   </div>
 
   <div
@@ -34,13 +35,21 @@ export default {
     data: Array,
   },
   data: function () {
+    let id = this.data && this.data[0] ? this.data[0].id : "";
+    const { tab } = this.$route.query || {};
+
     return {
-      actived: this.data && this.data[0] ? this.data[0].id : "",
+      actived: tab || id,
     };
   },
   methods: {
     onChangeTab: function (id) {
       this.actived = id;
+
+      this.$router.push({
+        path: this.$route.path,
+        query: { tab: id },
+      });
     },
   },
 };
@@ -49,21 +58,25 @@ export default {
 <style scoped>
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
 }
 
 .tab button {
   background-color: inherit;
   float: left;
-  border: none;
   outline: none;
   cursor: pointer;
   padding: 6px 12px;
   transition: 0.3s;
   font-size: 0.9rem;
+  border-radius: 6px 6px 0 0;
+  border: none;
+  border-bottom: 1px solid #d2d2d2;
+  margin-top: 6px;
+  border-color: #d2d2d2 !important;
 }
 
 .tab button:hover {
@@ -71,13 +84,16 @@ export default {
 }
 
 .tab button.active {
-  background-color: #ccc;
+  border: 1px solid #d2d2d2;
+  border-bottom: none;
+}
+
+.tab span {
+  flex: 1;
+  border-bottom: 1px solid #d2d2d2;
 }
 
 .tabcontent {
-  /* display: none; */
-  /* padding: 6px 12px; */
-  /* border: 1px solid #ccc; */
   border-top: none;
 }
 </style>
