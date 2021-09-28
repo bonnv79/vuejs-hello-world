@@ -52,6 +52,7 @@ export default {
   border: 1px solid #ccc;
   background-color: #f1f1f1;
   border-radius: 5px;
+  margin: 5px 0;
 }
 
 .tab button {

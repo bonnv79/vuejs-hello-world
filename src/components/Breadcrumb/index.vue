@@ -31,8 +31,9 @@ export default {
 <style scoped>
 ul.breadcrumb {
   margin: 0;
-  padding: 8px 0;
+  padding: 6px 0;
   list-style: none;
+  border-bottom: 1px solid #eaecef;
 }
 ul.breadcrumb li {
   display: inline;

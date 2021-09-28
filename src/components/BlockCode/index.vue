@@ -20,7 +20,6 @@ export default {
 
 <style scoped>
 .root {
-  margin-top: 10px;
   box-sizing: border-box;
   display: flex;
   border-radius: 5px;

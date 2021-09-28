@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Instances from '@/components/Instances';
 
 export const routes = [
   {
@@ -17,6 +16,10 @@ export const routes = [
     component: () => import('@/pages/About'),
   },
   {
+    path: "/:catchAll(.*)",
+    component: () => import('@/pages/NotFound'),
+  },
+  {
     path: "/example",
     name: "Example",
     component: () => import('@/pages/Example'),
@@ -25,93 +28,89 @@ export const routes = [
       {
         path: "introduction",
         name: "Introduction",
-        component: () => import('@/components/Introduction'),
+        component: () => import('@/demo/Introduction'),
       },
       {
         path: "instances",
         name: "Instances",
-        component: Instances,
+        component: () => import('@/demo/Instances'),
       },
       {
         path: "template",
         name: "Template",
-        component: () => import('@/components/Template'),
+        component: () => import('@/demo/Template'),
       },
       {
         path: "components",
         name: "Components",
-        component: () => import('@/components/Components'),
+        component: () => import('@/demo/Components'),
       },
       {
         path: "computed-properties",
         name: "ComputedProperties",
-        component: () => import('@/components/ComputedProperties'),
+        component: () => import('@/demo/ComputedProperties'),
       },
       {
         path: "watch-property",
         name: "WatchProperty",
-        component: () => import('@/components/WatchProperty'),
+        component: () => import('@/demo/WatchProperty'),
       },
       {
         path: "binding",
         name: "Binding",
-        component: () => import('@/components/Binding'),
+        component: () => import('@/demo/Binding'),
       },
       {
         path: "events",
         name: "Events",
-        component: () => import('@/components/Events'),
+        component: () => import('@/demo/Events'),
       },
       {
         path: "rendering",
         name: "Rendering",
-        component: () => import('@/components/Rendering'),
+        component: () => import('@/demo/Rendering'),
       },
       {
         path: "transition-animation",
         name: "TransitionAnimation",
-        component: () => import('@/components/TransitionAnimation'),
+        component: () => import('@/demo/TransitionAnimation'),
       },
       {
         path: "directives",
         name: "Directives",
-        component: () => import('@/components/Directives'),
+        component: () => import('@/demo/Directives'),
       },
       {
         path: "mixins",
         name: "Mixins",
-        component: () => import('@/components/Mixins'),
+        component: () => import('@/demo/Mixins'),
       },
       {
         path: "render-function",
         name: "RenderFunction",
-        component: () => import('@/components/RenderFunction'),
+        component: () => import('@/demo/RenderFunction'),
       },
       {
         path: "reactive-interface",
         name: "ReactiveInterface",
-        component: () => import('@/components/ReactiveInterface'),
+        component: () => import('@/demo/ReactiveInterface'),
       },
       {
         path: "lifecycle-hooks",
         name: "LifecycleHooks",
-        component: () => import('@/components/LifecycleHooks'),
+        component: () => import('@/demo/LifecycleHooks'),
       },
       {
         path: "examples",
         name: "Examples",
-        component: () => import('@/components/Examples'),
+        component: () => import('@/demo/Examples'),
       },
       {
         path: "demo",
         name: "Demo",
-        component: () => import('@/components/Demo')
+        component: () => import('@/demo/Demo')
       }
     ]
-  },
-  {
-    path: "/:catchAll(.*)",
-    component: () => import('@/components/NotFound'),
   },
 ];
 

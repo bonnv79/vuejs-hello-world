@@ -143,7 +143,6 @@ body {
 }
 
 .body > .breadcrumb {
-  border-bottom: 1px solid #eaecef;
 }
 
 .body-title {
@@ -154,7 +153,7 @@ body {
 
 .source-link {
   position: absolute;
-  top: 8px;
+  top: 5px;
   right: 20px;
 }
 
