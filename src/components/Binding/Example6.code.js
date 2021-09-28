@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="root">
     <h3>6. Form Input Bindings</h3>
@@ -50,3 +53,7 @@ export default {
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);

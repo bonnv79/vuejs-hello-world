@@ -4,6 +4,7 @@
 
 <script>
 import Example1 from "./Example1.vue";
+import code1 from "./Example1.code";
 import Tabs from "@/components/Tabs";
 
 export default {
@@ -18,6 +19,7 @@ export default {
           id: "Example1",
           name: "Example1",
           component: <Example1 />,
+          code: code1,
         },
       ],
     };

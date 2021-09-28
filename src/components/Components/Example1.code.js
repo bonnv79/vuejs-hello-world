@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>
@@ -14,7 +17,7 @@
 
 <script>
 export default {
-  name: "Example1",
+  name: "Example",
   data: () => {
     return {
       name: "Ria",
@@ -37,3 +40,7 @@ export default {
   color: red;
 }
 </style>
+
+`;
+
+export default parseCode(code);

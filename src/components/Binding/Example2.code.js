@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>2. Binding HTML Classes</h3>
@@ -49,3 +52,7 @@ export default {
   background-color: #ffbaba;
 }
 </style>
+
+`;
+
+export default parseCode(code);

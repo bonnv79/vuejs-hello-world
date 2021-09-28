@@ -2,36 +2,29 @@ import { parseCode } from "@/utils";
 
 const code = `
 <template>
-  <BlockCode :code="code">
-    <div class="">
-      <h3>2. Extends Example1</h3>
+  <div class="">
+    <h3>2. Extends Example1</h3>
 
-      <h1>Parent</h1>
-      <div>Title props: {{ title }}</div>
-      <div>Firstname : {{ firstname }}</div>
-      <div>Lastname : {{ lastname }}</div>
-      <div>{{ mydetails() }}</div>
+    <h1>Parent</h1>
+    <div>Title props: {{ title }}</div>
+    <div>Firstname : {{ firstname }}</div>
+    <div>Lastname : {{ lastname }}</div>
+    <div>{{ mydetails() }}</div>
 
-      <h1>Current</h1>
+    <h1>Current</h1>
 
-      <div>Title child props: {{ titleChild }}</div>
-      <div>Firstname : {{ firstname1 }}</div>
-      <div>Lastname : {{ lastname1 }}</div>
-      <div>{{ getData() }}</div>
-    </div>
-  </BlockCode>
+    <div>Title child props: {{ titleChild }}</div>
+    <div>Firstname : {{ firstname1 }}</div>
+    <div>Lastname : {{ lastname1 }}</div>
+    <div>{{ getData() }}</div>
+  </div>
 </template>
 
 <script>
 import Example1 from "./Example1.vue";
-import BlockCode from "../BlockCode";
-import code from "./Example2.code";
 
 export default {
   name: "Example",
-  components: {
-    BlockCode,
-  },
   extends: Example1,
   props: ["titleChild"],
   data: () => {
@@ -39,7 +32,6 @@ export default {
       firstname1: "Ria2",
       lastname1: "Singh2",
       address1: "Mumbai2",
-      code,
     };
   },
   methods: {
@@ -49,6 +41,7 @@ export default {
   },
 };
 </script>
+
 `;
 
 export default parseCode(code);

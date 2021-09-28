@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
     <h3>2. View Example1</h3>
@@ -12,7 +15,7 @@
 import Example1 from "./Example1.vue";
 
 export default {
-  name: "Example2",
+  name: "Example",
   components: {
     Example1,
   },
@@ -29,3 +32,7 @@ export default {
   padding: 0 20px;
 }
 </style>
+
+`;
+
+export default parseCode(code);

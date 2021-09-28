@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.1.6
+
+- Add TabsTemplate component 
+
 ##### 1.1.5
 
 - modify demo page (add tabs for examples)

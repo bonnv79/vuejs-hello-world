@@ -16,13 +16,20 @@
     class="tabcontent"
     v-show="item.id === actived"
   >
-    <div v-is="item.component"></div>
+    <BlockCode :code="item.code">
+      <component :is="item.component"></component>
+    </BlockCode>
   </div>
 </template>
 
 <script>
+import BlockCode from "@/components/BlockCode";
+
 export default {
   name: "Tabs",
+  components: {
+    BlockCode,
+  },
   props: {
     data: Array,
   },

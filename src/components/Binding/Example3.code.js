@@ -1,3 +1,6 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="root">
     <h3>
@@ -60,3 +63,7 @@ div {
   background-color: #dff2bf;
 }
 </style>
+
+`;
+
+export default parseCode(code);

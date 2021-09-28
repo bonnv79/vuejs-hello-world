@@ -1,6 +1,9 @@
+import { parseCode } from "@/utils";
+
+const code = `
 <template>
   <div class="">
-    <h3>4. Get/Set in Computed Properties</h3>
+    <h3>3. Get in Computed Properties</h3>
 
     <input type="text" v-model="fullname" />
     <h1>{{ firstName }}</h1>
@@ -10,7 +13,7 @@
 
 <script>
 export default {
-  name: "Example4",
+  name: "Example3",
   data: () => {
     return {
       firstName: "Terry",
@@ -22,12 +25,11 @@ export default {
       get: function () {
         return this.firstName + " " + this.lastName;
       },
-      set: function (name) {
-        var fname = name.split(" ");
-        this.firstName = fname[0];
-        this.lastName = fname[1];
-      },
     },
   },
 };
 </script>
+
+`;
+
+export default parseCode(code);
